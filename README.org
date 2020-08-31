@@ -1,0 +1,13 @@
+#+OPTIONS: toc:nil
+
+* ~futures-either~
+[[https://github.com/r3v2d0g/futures-either/blob/main/LICENSE.txt][https://img.shields.io/crates/l/futures-either.svg]]
+[[https://crates.io/crates/futures-either][https://img.shields.io/crates/v/futures-either.svg]]
+[[https://docs.rs/futures-either][https://docs.rs/futures-either/badge.svg]]
+
+** License
+#+BEGIN_QUOTE
+This Source Code Form is subject to the terms of the Mozilla Public
+License, v. 2.0. If a copy of the MPL was not distributed with this
+file, You can obtain one at http://mozilla.org/MPL/2.0/.
+#+END_QUOTE
