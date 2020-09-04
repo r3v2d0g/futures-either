@@ -1,9 +1,27 @@
 #+OPTIONS: toc:nil
 
-* ~futures-either~
+* A way to await on the output of either of two futures
 [[https://github.com/r3v2d0g/futures-either/blob/main/LICENSE.txt][https://img.shields.io/crates/l/futures-either.svg]]
 [[https://crates.io/crates/futures-either][https://img.shields.io/crates/v/futures-either.svg]]
 [[https://docs.rs/futures-either][https://docs.rs/futures-either/badge.svg]]
+
+** Example
+#+BEGIN_SRC rust
+use futures_lite::future;
+use futures_either::{either, Either};
+
+let out = either(
+    async { 42 },
+    async { false },
+).await;
+assert_eq!(out, Either::Left(42));
+
+let out = either(
+    future::pending::<bool>(),
+    async { 42 },
+).await;
+assert_eq!(out, Either::Right(42));
+#+END_SRC
 
 ** License
 #+BEGIN_QUOTE

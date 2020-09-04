@@ -1,12 +1,12 @@
 [package]
 name = "futures-either"
-description = ""
+description = "A way to await on the output of either of two futures"
 version = "0.0.0"
 homepage = "https://github.com/r3v2d0g/futures-either"
 repository = "https://git.r3vd5u3d.network/~r3v2d0g/futures-either"
 documentation = "https://docs.rs/futures-either"
-keywords = []
-categories = []
+keywords = ["async", "await", "future", "futures"]
+categories = ["asynchronous", "concurrency"]
 readme = "README.md"
 license = "MPL-2.0"
 authors = ["Matthieu Le brazidec (r3v2d0g) <r3v2d0g@jesus.gg>"]

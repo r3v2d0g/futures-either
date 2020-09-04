@@ -9,6 +9,29 @@
 // ======================================== Documentation ======================================= \\
 
 //! A way to await on the output of either of two futures.
+//!
+//! ## Example
+//!
+//! ```rust
+//! use futures_lite::future;
+//! use futures_either::{either, Either};
+//!
+//! # future::block_on(async {
+//! #
+//! let out = either(
+//!     async { 42 },
+//!     async { false },
+//! ).await;
+//! assert_eq!(out, Either::Left(42));
+//!
+//! let out = either(
+//!     future::pending::<bool>(),
+//!     async { 42 },
+//! ).await;
+//! assert_eq!(out, Either::Right(42));
+//! #
+//! # });
+//! ```
 
 // =========================================== Imports ========================================== \\
 
