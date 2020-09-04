@@ -1,7 +1,7 @@
 [package]
 name = "futures-either"
 description = "A way to await on the output of either of two futures"
-version = "0.0.0"
+version = "0.1.0"
 homepage = "https://github.com/r3v2d0g/futures-either"
 repository = "https://git.r3vd5u3d.network/~r3v2d0g/futures-either"
 documentation = "https://docs.rs/futures-either"
@@ -11,7 +11,6 @@ readme = "README.md"
 license = "MPL-2.0"
 authors = ["Matthieu Le brazidec (r3v2d0g) <r3v2d0g@jesus.gg>"]
 edition = "2018"
-publish = false
 
 [features]
 default = ["fair"]
