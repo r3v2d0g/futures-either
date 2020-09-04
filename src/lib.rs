@@ -6,6 +6,10 @@
  *                                                                                                *
  **************************************************************************************************/
 
+// ======================================== Documentation ======================================= \\
+
+//! A way to await on the output of either of two futures.
+
 // =========================================== Imports ========================================== \\
 
 pub use either::Either;
@@ -61,6 +65,11 @@ pub mod futs {
 
 // ========================================== either() ========================================== \\
 
+/// Returns a future polling two futures and returning the output of the first one to complete.
+///
+/// The returned future will always poll `left` first; for a "fair" alternative, see
+/// [`either_fair()`].
+///
 /// ## Example
 ///
 /// ```rust
@@ -95,6 +104,11 @@ where
 
 #[cfg(feature = "fair")]
 #[cfg_attr(docsrs, doc(cfg(feature = "fair")))]
+/// Returns a future polling two futures and returning the output of the first one to complete.
+///
+/// The returned future will choose which future to poll first randomly, each time it is being
+/// polled; for an "unfair" alternative, see [`either()`].
+///
 /// ## Example
 ///
 /// ```rust
@@ -127,6 +141,12 @@ where
 
 // ======================================== try_either() ======================================== \\
 
+/// Returns a future polling two futures and returning a result with the output or error returned
+/// by the first one to complete.
+///
+/// The returned future will always poll `left` first; for a "fair" alternative, see
+/// [`try_either_fair()`].
+///
 /// ## Example
 ///
 /// ```rust
@@ -161,6 +181,12 @@ where
 
 #[cfg(feature = "fair")]
 #[cfg_attr(docsrs, doc(cfg(feature = "fair")))]
+/// Returns a future polling two futures and returning a result with the ouput or error returned by
+/// the first one to complete.
+///
+/// The returned future will choose which future to poll first randomly, each time it is being
+/// polled; for an "unfair" alternative, see [`try_either()`].
+///
 /// ## Example
 ///
 /// ```rust
